@@ -1,4 +1,5 @@
 const sharp = require('sharp')
+const { updateFileExtension } = require('./func.util')
 
 const processImage = (file) => {
 	return new Promise((resolve, reject) => {
@@ -12,7 +13,7 @@ const processImage = (file) => {
 				file.buffer = buffer
 				file.mimetype = `image/${info.format}`
 				file.size = info.size
-				file.originalname = file.originalname.replace(/\..+/, `.${info.format}`)
+				file.originalname = updateFileExtension(file.originalname, 'webp')
 				resolve(buffer)
 			})
 	})
