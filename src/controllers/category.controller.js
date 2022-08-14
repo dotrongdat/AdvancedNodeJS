@@ -6,7 +6,7 @@ const get = async (req, res) => {
 	try {
 		res.status(StatusCodes.OK).json({
 			payload: { categories: await categoryService.get() },
-			message: 'Get successfully v3',
+			message: 'Get successfully',
 		})
 	} catch (error) {
 		res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
