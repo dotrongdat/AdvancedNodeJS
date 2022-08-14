@@ -23,6 +23,6 @@ app.use(cors())
 app.use(express.json())
 app.use(route)
 
-app.listen(port, () => {
+module.exports = app.listen(port, () => {
 	console.log(`Server is running on ${hostname}:${port}`)
 })
