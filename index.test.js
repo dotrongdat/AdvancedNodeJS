@@ -7,6 +7,7 @@ describe('category route', () => {
 			const res = await request(app).get('/api/category')
 
 			expect(res.statusCode).toBe(200)
+			expect(res.body.message).toBe('Get successfully')
 
 			const { categories } = res.body.payload
 			expect(categories.map((category) => category.status)).not.toContain(0)
@@ -20,6 +21,7 @@ describe('product route', () => {
 			const res = await request(app).get('/api/product')
 
 			expect(res.statusCode).toBe(200)
+			expect(res.body.message).toBe('Get successfully')
 
 			const { products } = res.body.payload
 			expect(products.map((product) => product.status)).not.toContain(0)
